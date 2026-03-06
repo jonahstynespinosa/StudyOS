@@ -21,6 +21,12 @@ p {
   text-align: center;
 }
 
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
 .load-assignments {
   align-items: center;
   text-align: center;
@@ -31,7 +37,6 @@ p {
   padding: 10px 10px;
   border-radius: 25px;
   border: none;
-  margin: 20px auto;
   cursor: pointer;
 }
 

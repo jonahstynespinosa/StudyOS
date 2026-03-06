@@ -1,4 +1,6 @@
 const btn = document.getElementById("load-assignment")
+const showCompletedBtn = document.getElementById("showCompleted")
+const showAllBtn = document.getElementById("showAll")
 const dataSet = document.getElementById("dataSet")
 
 let assignments = []
@@ -22,6 +24,13 @@ async function loadAssignments() {
 }
 
 btn.addEventListener("click", loadAssignments) 
+
+showAllBtn.addEventListener("click", () => displayAssignments(assignments))
+
+showCompletedBtn.addEventListener("click", () => {
+  const completedAssignments = assignments.filter(assignment => assignment.completed)
+  displayAssignments(completedAssignments)
+})
 
 function displayAssignments(assignments) {
   dataSet.innerHTML = ""
