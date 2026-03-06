@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0d0d0f;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+.header  {
+  font-size: 36px;
+  text-align: center;
+  margin: 20px;
+}
+
+p {
+  text-align: center;
+}
+
+.load-assignments {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  display: block;
+  background-color: rgb(66, 66, 255);
+  color: white;
+  padding: 10px 10px;
+  border-radius: 25px;
+  border: none;
+  margin: 20px auto;
+  cursor: pointer;
+}
+
+.data-item {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+}
