@@ -1,7 +1,10 @@
 const btn = document.getElementById("load-assignment")
 const showCompletedBtn = document.getElementById("showCompleted")
 const showAllBtn = document.getElementById("showAll")
+const clearBtn = document.getElementById("clearData")
 const dataSet = document.getElementById("dataSet")
+const searchInput = document.getElementById("searchInput")
+const searchBtn = document.getElementById("searchBtn")
 
 let assignments = []
 
@@ -32,6 +35,23 @@ showCompletedBtn.addEventListener("click", () => {
   displayAssignments(completedAssignments)
 })
 
+clearBtn.addEventListener("click", () => {
+  assignments = []
+  dataSet.innerHTML = ""
+})
+
+searchBtn.addEventListener("click", () => {
+  const query = searchInput.value.toLowerCase()
+  const filteredAssignments = assignments.filter(assignment => assignment.title.toLowerCase().includes(query))
+  displayAssignments(filteredAssignments)
+})
+
+searchInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    searchBtn.click()
+  }
+})
+
 function displayAssignments(assignments) {
   dataSet.innerHTML = ""
   
@@ -46,3 +66,6 @@ function displayAssignments(assignments) {
     dataSet.appendChild(assignmentDiv)
   })
 }
+
+
+

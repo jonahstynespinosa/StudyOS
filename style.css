@@ -1,3 +1,18 @@
+:root {
+    --bg:        #262728;
+  --surface:   #13141a;
+  --border:    #22242e;
+  --accent:    #4f6ef7;
+  --accent-dim:#2a3a8c;
+  --green:     #2ecc71;
+  --yellow:    #f39c12;
+  --text:      #e8eaf0;
+  --muted:     #6b6e82;
+  --radius:    10px;
+  --mono:      'Space Mono', monospace;
+  --sans:      'DM Sans', sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +21,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #0d0d0f;
+  background-color: var(--bg);
   color: #ffffff;
   min-height: 100vh;
 }
@@ -25,6 +40,7 @@ p {
   display: flex;
   justify-content: center;
   margin: 20px;
+  gap: 20px;
 }
 
 .load-assignments {
@@ -46,4 +62,27 @@ p {
   padding: 10px;
   margin: 10px;
   border-radius: 5px;
+}
+
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  gap: 15px;
+}
+
+.searchInput {
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
+  width: 400px;
+}
+
+.searchBtn {
+  background-color: rgb(66, 66, 255);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
 }
