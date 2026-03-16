@@ -1,3 +1,6 @@
+let assignments = []
+
+
 const btn = document.getElementById("load-assignment")
 const showCompletedBtn = document.getElementById("showCompleted")
 const showAllBtn = document.getElementById("showAll")
@@ -5,8 +8,9 @@ const clearBtn = document.getElementById("clearData")
 const dataSet = document.getElementById("dataSet")
 const searchInput = document.getElementById("searchInput")
 const searchBtn = document.getElementById("searchBtn")
-
-let assignments = []
+const completed = assignments.filter(a => a.completed).length
+const total = assignments.length
+const remaining = total - completed
 
 
 async function loadAssignments() {
@@ -67,5 +71,11 @@ function displayAssignments(assignments) {
   })
 }
 
-
-
+function displayStats() {
+  let statsDiv = document.getElementById("dataSet")
+  statsDiv.innerHTML = `
+    <p>Total Assignments: ${total}</p>
+    <p>Completed: ${completed}</p>
+    <p>Remaining: ${remaining}</p>
+  `
+}
