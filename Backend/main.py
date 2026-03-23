@@ -44,3 +44,17 @@ def remove_task(task_id: int):
       raise HTTPException(status_code=404, detail="Task not found")
     
     return {"message": "Task deleted", "task": deleted_task}
+
+
+class TaskUpdate(BaseModel):
+    title: str
+    completed: bool
+
+@app.put("/tasks/{task_id}")
+def update_task_endpoint(task_id: int, updated: TaskUpdate):
+    task = update_task(task_id, updated.title, updated.completed)
+
+    if task is None:
+        raise HTTPException(status_code=404, detail="Task not found")
+    
+    return {"message": "Task updated", "task": task}
