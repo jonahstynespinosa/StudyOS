@@ -24,6 +24,14 @@ def root():
 def read_tasks():
     return {"tasks": get_tasks()}
 
+@app.get("/tasks/{task_id}")
+def read_task(task_id: int):
+    task = get_tasks(task_id)
+
+    if task is None:
+        raise HTTPException(status_code=404, detail="Task not found")
+    return task
+
 
 @app.post("/tasks", status_code=201)
 def create_task(task: TaskCreate):
