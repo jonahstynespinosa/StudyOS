@@ -1,3 +1,8 @@
+import json 
+from pathlib import Path
+
+DATA_FILE = ("task.json")
+
 tasks = []
 next_id = 1
 
