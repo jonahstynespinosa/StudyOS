@@ -1,7 +1,7 @@
 import json 
 from pathlib import Path
 
-DATA_FILE = ("task.json")
+DATA_FILE = Path("task.json")
 
 def load_tasks():
   if not DATA_FILE.exists():
@@ -48,7 +48,7 @@ def update_task(task_id, title, completed):
     if task["id"] == task_id:
       task["title"] = title
       task["completed"] = completed
-      save_tasks()
+      save_tasks(tasks)
       return task
   return None
 

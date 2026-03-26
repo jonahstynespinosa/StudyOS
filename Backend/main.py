@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
-from tasks import add_task, get_tasks, delete_task, update_task
+from tasks import add_task, get_tasks, get_task, delete_task, update_task
 
 app = FastAPI(title="StudyOS API")
 
@@ -26,7 +26,7 @@ def read_tasks():
 
 @app.get("/tasks/{task_id}")
 def read_task(task_id: int):
-    task = get_tasks(task_id)
+    task = get_task(task_id)
 
     if task is None:
         raise HTTPException(status_code=404, detail="Task not found")
